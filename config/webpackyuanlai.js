@@ -1,6 +1,6 @@
 var path = require('path')
 var webpack = require('webpack')
-
+// "dev": "cross-env NODE_ENV=development webpack-dev-server --config ./build/webpack.dev.conf.js --hot",
 module.exports = {
   entry: './src/main.js',
   output: {

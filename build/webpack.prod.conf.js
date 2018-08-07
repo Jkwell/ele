@@ -21,7 +21,7 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env': env,
     }),
-    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.OccurrenceOrderPlugin(),
     // js文件压缩插件
     new webpack.optimize.UglifyJsPlugin({
       // 压缩配置
@@ -48,6 +48,24 @@ module.exports = {
         // https://github.com/kangax/html-minifier#options-quick-reference
       },
       chunksSortMode: 'dependency'
+    }),
+    // 分割vendor文件到自己的文件中
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+       // 在传入  公共chunk(commons chunk) 之前所需要包含的最少数量的 chunks 。
+       minChunks: function(module, count) {
+         return (
+           // 声明公共的模块来自node_modules文件夹
+           module.resource && /\.js$/.test(module.resource) && module.resource.indexOf
+           (path.join(__dirname, '../node_modules'))
+         ) === 0
+       } 
+    }),
+    //上面虽然已经分离了第三方库,每次修改编译都会改变vendor的hash值，导致浏览器缓存失效。原因是vendor包含了webpack在打包过程中会产生一些运行时代码，运行时代码中实际上保存了打包后的文件名。当修改业务代码时,业务代码的js文件的hash值必然会改变。一旦改变必然会导致vendor变化。vendor变化会导致其hash值变化。
+    //下面主要是将运行时代码提取到单独的manifest文件中，防止其影响vendor.js
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'manifest',
+      chunks: ['vendor']
     })
   ]
 }

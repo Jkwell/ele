@@ -1,4 +1,3 @@
-import { mkdir } from 'fs';
 
 // 有全局模式，允许直接在脚本中写 shell 命令。
 require('shelljs/global')

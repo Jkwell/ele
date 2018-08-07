@@ -13,7 +13,7 @@ module.exports = {
   resolve: {
     extensions: ['.js','.json','.css','.vue'],
     // 如果webpack 在 resolve.root 或者 resolve.modulesDirectories 实在找不到某个模块了，会去这个（些）目录中找。
-    fallback: [path.join(__dirname, '../node_modules')],
+    modules: [path.join(__dirname, '../node_modules')],
     alias: {
       'src': path.resolve(__dirname, '../src'),
       'common': path.resolve(__dirname,'../src/common'),
@@ -22,7 +22,7 @@ module.exports = {
   },
   // resolveLoader相当于是针对webpack Loader 的单独 resolve 配置，
   resolveLoader: {
-    fallback: [path.join(__dirname, '../node_modules')]
+    modules: [path.join(__dirname, '../node_modules')]
   },
   module: {
     rules: [
