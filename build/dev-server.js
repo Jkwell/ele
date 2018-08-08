@@ -21,7 +21,7 @@ var ratings = appData.ratings
 // 设置路由
 var apiRoutes = express.Router()
 
-apiRoutes.get('./seller', function(req, res) {
+apiRoutes.get('/seller', function(req, res) {
   res.json({
     errno: 0,
     data: seller
