@@ -17,7 +17,8 @@ module.exports = {
     alias: {
       'src': path.resolve(__dirname, '../src'),
       'common': path.resolve(__dirname,'../src/common'),
-      'components': path.resolve(__dirname,'../src/components')
+      'components': path.resolve(__dirname,'../src/components'),
+      'api': path.resolve(__dirname,'../src/api')
     }
   },
   // resolveLoader相当于是针对webpack Loader 的单独 resolve 配置，

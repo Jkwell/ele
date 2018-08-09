@@ -47,6 +47,8 @@ rules: {
   // 'no-unused-vars': 0,
   // 要求或禁止末尾逗号
   'comma-dangle': 0,
-  'no-new':0
+  'no-new':0,
+  "space-infix-ops":0,
+  "space-in-parens":0
 }
 }
