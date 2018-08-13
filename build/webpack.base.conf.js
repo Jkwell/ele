@@ -41,11 +41,9 @@ module.exports = {
        },
       {
         test: /\.css$/,
-        use: [
-          'vue-style-loader',
-          'css-loader'
-        ],
-      },      {
+        use: [ 'style-loader','vue-style-loader', 'css-loader' ]
+      },      
+      {
         test: /\.vue$/,
         loader: 'vue-loader',
       },
@@ -66,7 +64,7 @@ module.exports = {
         loader: 'json-loader'
       },
       {
-        test: /\.(woff2|eot|ttf|otf)(\?.*)?$/,
+        test: /\.(woff2|woff|eot|ttf|otf)(\?.*)?$/,
         loader: 'url-loader',
         options: {
           limit: 8042

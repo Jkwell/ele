@@ -3,7 +3,7 @@ import axios from 'axios'
 
 // axios设置
 axios.defaults.timeout = 5000
-axios.defaults.baseURL = "/api"
+axios.defaults.baseURL = ""
 
 /**
  * fetch 请求方法

@@ -56,13 +56,13 @@
             </div>
             <div class="bulletin">
               <p class="content">{{seller.bulletin}}</p>
-            </div>  
+            </div>
           </div>
         </div>
         <div class="detail-close" @click="hideDetail">
           <i class="close">X</i>
         </div>
-      </div> 
+      </div>
      </transition>
   </div>
 </template>
@@ -98,5 +98,6 @@
 </script>
 
 <style lang="stylus">
+@import "../../common/stylus/icon.styl"
 @import "../../common/stylus/header/header.styl"
 </style>
