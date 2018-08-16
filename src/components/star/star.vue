@@ -25,7 +25,7 @@
       itemClasses() {
         const result = []
         // const score = Math.floor(this.score*2)/2
-        const floor = this.scroe % 1 !== 0
+        const floor = this.score % 1 !== 0
         const inter = Math.floor(this.score)
         /*eslint-disable*/
         for ( let i=0; i<inter; i++ ) {
